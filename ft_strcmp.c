@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 15:32:54 by fself             #+#    #+#             */
-/*   Updated: 2019/09/18 18:17:56 by fself            ###   ########.fr       */
+/*   Created: 2019/09/18 17:21:53 by fself             #+#    #+#             */
+/*   Updated: 2019/09/18 17:27:22 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_bzero(void *ptr, size_t num)
+int		ft_strcmp(const char *str1, const char *str2)
 {
-	unsigned char *buf;
+	int				i;
+	unsigned char	s1;
+	unsigned char	s2;
 
-	buf = (unsigned char*)ptr;
-	while (num-- > 0)
+	i = 0;
+	while (str1[i] == str2[i] && str1[i] != '\0' && str2[i] != '\0')
 	{
-		buf[num] = '\0';
+		i++;
 	}
+	s1 = (unsigned char)str1[i];
+	s2 = (unsigned char)str2[i];
+	return (s1 - s2);
 }

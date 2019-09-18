@@ -6,7 +6,7 @@
 #    By: fself <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/18 15:16:13 by fself             #+#    #+#              #
-#    Updated: 2019/09/18 16:29:25 by fself            ###   ########.fr        #
+#    Updated: 2019/09/18 18:15:26 by fself            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,13 @@ NAME=libft.a
 
 SRCS=ft_putchar.c ft_memset.c ft_memcpy.c ft_memchr.c ft_memcmp.c \
 	 ft_bzero.c ft_strlen.c ft_strcpy.c ft_strncpy.c ft_strcat.c \
-	 ft_strncat.c
+	 ft_strncat.c ft_strchr.c ft_isalpha.c ft_isdigit.c ft_isalnum.c \
+	 ft_isprint.c ft_toupper.c ft_tolower.c
 
 OBJECTS=ft_putchar.o ft_memset.o ft_memcpy.o ft_memchr.o ft_memcmp.o \
 		ft_bzero.o ft_strlen.o ft_strcpy.o ft_strncpy.o ft_strcat.o \
-		ft_strncat.o
+		ft_strncat.o ft_strchr.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
+		ft_isprint.o ft_toupper.o ft_tolower.o
 
 INCLUDES=./
 

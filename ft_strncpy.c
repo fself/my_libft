@@ -6,7 +6,7 @@
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 16:14:39 by fself             #+#    #+#             */
-/*   Updated: 2019/09/18 16:16:56 by fself            ###   ########.fr       */
+/*   Updated: 2019/09/18 18:18:51 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t n)
 	}
 	while (i < n)
 	{
-		dst[i]  = '\0';
+		dst[i] = '\0';
 		i++;
 	}
 	return (dst);

@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 15:32:54 by fself             #+#    #+#             */
-/*   Updated: 2019/09/18 18:17:56 by fself            ###   ########.fr       */
+/*   Created: 2019/09/18 16:47:37 by fself             #+#    #+#             */
+/*   Updated: 2019/09/18 16:49:50 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *ptr, size_t num)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char *buf;
-
-	buf = (unsigned char*)ptr;
-	while (num-- > 0)
+	while (*s)
 	{
-		buf[num] = '\0';
+		if (*s == c)
+			return ((char*)s);
+		++s;
 	}
+	if (c == '\0')
+		return ((char*)s);
+	return (0);
 }
