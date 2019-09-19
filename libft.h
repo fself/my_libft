@@ -35,6 +35,8 @@ char			*ft_strncpy(char *dst, const char *src, size_t n);
 char			*ft_strcat(char *dst, const char *src);
 char			*ft_strncat(char *dst, const char *src, size_t n);
 char			*ft_strchr(const char *s, int c);
+void			*ft_memcpy(void *destination, const void *source, size_t num);
+void			*ft_memccpy(void *destination, const void *source, int c, size_t num);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
@@ -44,4 +46,8 @@ int				ft_toupper(int c);
 int				ft_tolower(int c);
 void			ft_putstr(const char *s);
 void			ft_putstr_fd(const char *s, int fd);
+void			*ft_memmove(void *destination, const void *source, size_t n);
+char			*strdup(const char *s);
+
+
 #endif

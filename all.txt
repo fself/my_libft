@@ -1,12 +1,12 @@
 memset		+
 bzero		+
 memcpy		+
-memccpy		
-memmove		
+memccpy		+
+memmove		+
 memchr		+
 memcmp		+
 strlen		+
-strdup		
+strdup		+
 strcpy		+
 strncpy		+
 strcat		+
