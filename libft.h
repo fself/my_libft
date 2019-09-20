@@ -52,7 +52,7 @@ char			*ft_strdup(const char *s);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strstr(const char *haystack, const char *needle);
-int				ft_strcmp(const char *str1, const char *str2);
+int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strnstr(const char *haystack, const char *needle, \
 		size_t len);
