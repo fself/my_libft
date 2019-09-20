@@ -6,7 +6,7 @@
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 14:33:04 by fself             #+#    #+#             */
-/*   Updated: 2019/09/18 18:48:40 by fself            ###   ########.fr       */
+/*   Updated: 2019/09/20 17:28:46 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ char			*ft_strcat(char *dst, const char *src);
 char			*ft_strncat(char *dst, const char *src, size_t n);
 char			*ft_strchr(const char *s, int c);
 void			*ft_memcpy(void *destination, const void *source, size_t num);
-void			*ft_memccpy(void *destination, const void *source, int c, size_t num);
+void			*ft_memccpy(void *destination, const void *source, \
+		int c, size_t num);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
@@ -47,7 +48,15 @@ int				ft_tolower(int c);
 void			ft_putstr(const char *s);
 void			ft_putstr_fd(const char *s, int fd);
 void			*ft_memmove(void *destination, const void *source, size_t n);
-char			*strdup(const char *s);
-
-
+char			*ft_strdup(const char *s);
+size_t			ft_strlcat(char *dst, const char *src, size_t size);
+char			*ft_strrchr(const char *s, int c);
+char			*ft_strstr(const char *haystack, const char *needle);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
+char			*ft_strnstr(const char *haystack, const char *needle, \
+		size_t len);
+int				ft_atoi(const char *str);
+void			ft_memdel(void **ap);
+void			ft_striter(char *s, void (*f)(char*));
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 #endif

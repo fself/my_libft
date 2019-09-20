@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 15:11:20 by fself             #+#    #+#             */
-/*   Updated: 2019/09/20 15:16:08 by fself            ###   ########.fr       */
+/*   Created: 2019/09/20 16:26:53 by fself             #+#    #+#             */
+/*   Updated: 2019/09/20 16:33:23 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memmove(void *destination, const void *source, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*dst;
-	char	*src;
+	char	*ptr;
+	size_t	letters_left;
+	size_t	needle_len;
 	size_t	i;
 
-	if (destination == source)
-		return (destination);
-	src = (char*)source;
-	dst = (char*)destination;
-	if (source < destination)
+	ptr = (char*)haystack;
+	if (needle[0] == '\0')
+		return (ptr);
+	i = 0;
+	letters_left = len;
+	needle_len = (size_t)ft_strlen(needle);
+	while (*ptr && letters_left >= needle_len)
 	{
-		i = n;
-		while (i-- > 0)
-			dst[i] = src[i];
-	}
-	else
-	{
-		i = 0;
-		while (i < n)
+		if (*ptr == *needle)
 		{
-			dst[i] = src[i];
-			i++;
+			if (ft_strncmp(needle, ptr, needle_len) == 0)
+				return (ptr);
 		}
+		i++;
+		letters_left--;
+		ptr++;
 	}
-	return (destination);
+	return (NULL);
 }

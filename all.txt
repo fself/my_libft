@@ -11,13 +11,13 @@ strcpy		+
 strncpy		+
 strcat		+
 strncat		+
-strlcat		
+strlcat		+		
 strchr		+
-strrchr		
-strstr		
+strrchr		+	
+strstr		+
 strnstr		
 strcmp		+
-strncmp		
+strncmp		+
 atoi		
 isalpha		+
 isdigit		+
