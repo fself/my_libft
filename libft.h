@@ -6,7 +6,7 @@
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 14:33:04 by fself             #+#    #+#             */
-/*   Updated: 2019/09/20 22:05:09 by fself            ###   ########.fr       */
+/*   Updated: 2019/09/20 22:11:35 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strnstr(const char *haystack, const char *needle, \
 		size_t len);
 int				ft_atoi(const char *str);
+void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
 void			ft_striter(char *s, void (*f)(char*));
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));

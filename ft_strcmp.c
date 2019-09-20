@@ -6,11 +6,11 @@
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 17:21:53 by fself             #+#    #+#             */
-/*   Updated: 2019/09/18 17:27:22 by fself            ###   ########.fr       */
+/*   Updated: 2019/09/20 22:22:33 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(const char *str1, const char *str2)
+int	ft_strcmp(const char *str1, const char *str2)
 {
 	int				i;
 	unsigned char	s1;
