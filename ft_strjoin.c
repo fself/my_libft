@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 18:58:27 by fself             #+#    #+#             */
-/*   Updated: 2019/09/20 21:24:41 by fself            ###   ########.fr       */
+/*   Created: 2019/09/20 22:00:08 by fself             #+#    #+#             */
+/*   Updated: 2019/09/20 22:04:27 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (s)
+	char	*str_to;
+	int		i;
+
+	if (s1 && s2)
 	{
-		while (*s)
+		str_to = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
+		if (str_to)
 		{
-			ft_putchar_fd(*s, fd);
-			s++;
+			i = 0;
+			while (*s1)
+			{
+				str_to[i++] = *s1;
+				s1++;
+			}
+			while (*s2)
+			{
+				str_to[i++] = *s2;
+				s2++;
+			}
+			str_to[i] = '\0';
+			return (str_to);
 		}
-		ft_putchar_fd('\n', fd);
 	}
+	return (NULL);
 }

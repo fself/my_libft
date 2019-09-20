@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 18:58:27 by fself             #+#    #+#             */
-/*   Updated: 2019/09/20 21:24:41 by fself            ###   ########.fr       */
+/*   Created: 2019/09/20 21:17:59 by fself             #+#    #+#             */
+/*   Updated: 2019/09/20 21:22:16 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+void	ft_putnbr(int nb)
 {
-	if (s)
-	{
-		while (*s)
-		{
-			ft_putchar_fd(*s, fd);
-			s++;
-		}
-		ft_putchar_fd('\n', fd);
-	}
+	ft_putnbr_fd(nb, 1);
 }

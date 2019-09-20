@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 18:58:27 by fself             #+#    #+#             */
-/*   Updated: 2019/09/20 21:24:41 by fself            ###   ########.fr       */
+/*   Created: 2019/09/20 21:48:23 by fself             #+#    #+#             */
+/*   Updated: 2019/09/20 21:51:47 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+char	*ft_strsub(const char *s, unsigned int start, size_t len)
 {
+	char	*substr;
+	size_t	i;
+	size_t	j;
+
 	if (s)
 	{
-		while (*s)
+		substr = ft_strnew(len);
+		if (substr)
 		{
-			ft_putchar_fd(*s, fd);
-			s++;
+			i = start;
+			j = 0;
+			while (j < len)
+			{
+				substr[j] = s[i];
+				i++;
+				j++;
+			}
+			substr[i] = '\0';
+			return (substr);
 		}
-		ft_putchar_fd('\n', fd);
 	}
+	return (NULL);
 }

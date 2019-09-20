@@ -6,7 +6,7 @@
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 14:33:04 by fself             #+#    #+#             */
-/*   Updated: 2019/09/20 17:28:46 by fself            ###   ########.fr       */
+/*   Updated: 2019/09/20 22:05:09 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ char			*ft_strdup(const char *s);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strstr(const char *haystack, const char *needle);
+int				ft_strcmp(const char *str1, const char *str2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strnstr(const char *haystack, const char *needle, \
 		size_t len);
@@ -59,4 +60,16 @@ int				ft_atoi(const char *str);
 void			ft_memdel(void **ap);
 void			ft_striter(char *s, void (*f)(char*));
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
+char			*ft_strnew(size_t size);
+void			ft_strdel(char **as);
+void			ft_strclr(char *s);
+char			*ft_strmap(const char *s, char (*f)(char));
+void			ft_putnbr_fd(int nb, int fd);
+void			ft_putnbr(int nb);
+char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+int				ft_strequ(const char *s1, const char *s2);
+int				ft_strnequ(const char *s1, const char *s2, size_t n);
+char			*ft_strsub(const char *s, unsigned int start, size_t len);
+char			*ft_strjoin(char const *s1, char const *s2);
+
 #endif

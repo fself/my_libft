@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 18:58:27 by fself             #+#    #+#             */
-/*   Updated: 2019/09/20 21:24:41 by fself            ###   ########.fr       */
+/*   Created: 2019/09/20 20:45:52 by fself             #+#    #+#             */
+/*   Updated: 2019/09/20 20:50:10 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+char	*ft_strnew(size_t size)
 {
-	if (s)
+	char	*str;
+
+	if (size == 0)
 	{
-		while (*s)
+		str = (char *)malloc(sizeof(*str) * (1));
+		if (str)
 		{
-			ft_putchar_fd(*s, fd);
-			s++;
+			ft_memset(str, '\0', (1));
+			return (str);
 		}
-		ft_putchar_fd('\n', fd);
 	}
+	else if (size)
+	{
+		str = (char *)malloc(sizeof(*str) * (size + 1));
+		if (str)
+		{
+			ft_memset(str, '\0', (size + 1));
+			return (str);
+		}
+	}
+	return (NULL);
 }
