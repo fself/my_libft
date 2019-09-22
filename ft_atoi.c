@@ -16,6 +16,7 @@ int		ft_atoi(const char *str)
 {
 	long	sign;
 	long	nbr;
+	int res;
 
 	sign = 1;
 	while (*str == ' ' || *str == '\f' || *str == '\n' || *str == '\r' ||
@@ -33,5 +34,6 @@ int		ft_atoi(const char *str)
 		nbr = nbr * 10 + *str - '0';
 		str++;
 	}
-	return (sign * nbr);
+	res = (sign * nbr);
+	return (res);
 }

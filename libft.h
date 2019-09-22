@@ -37,7 +37,7 @@ char			*ft_strncat(char *dst, const char *src, size_t n);
 char			*ft_strchr(const char *s, int c);
 void			*ft_memcpy(void *destination, const void *source, size_t num);
 void			*ft_memccpy(void *destination, const void *source, \
-		int c, size_t num);
+							int c, size_t num);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
@@ -55,8 +55,8 @@ char			*ft_strstr(const char *haystack, const char *needle);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strnstr(const char *haystack, const char *needle, \
-		size_t len);
-int				ft_atoi(const char *str);
+							size_t len);
+int			ft_atoi(const char *str);
 void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
 void			ft_striter(char *s, void (*f)(char*));

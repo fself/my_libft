@@ -21,7 +21,7 @@ SRCS=ft_putchar.c ft_memset.c ft_memcpy.c ft_memchr.c ft_memcmp.c \
 	 ft_striter.c ft_isascii.c ft_putendl.c ft_putendl_fd.c \
 	 ft_memalloc.c ft_strnew.c ft_strdel.c ft_strclr.c ft_strmap.c \
 	 ft_putnbr.c ft_putnbr_fd.c ft_strmapi.c ft_strequ.c ft_strnequ.c \
-	 ft_strsub.c ft_strjoin.c ft_strcmp.c
+	 ft_strsub.c ft_strjoin.c ft_strcmp.c ft_striteri.c
 
 OBJECTS=ft_putchar.o ft_memset.o ft_memcpy.o ft_memchr.o ft_memcmp.o \
 		ft_bzero.o ft_strlen.o ft_strcpy.o ft_strncpy.o ft_strcat.o \
@@ -32,7 +32,7 @@ OBJECTS=ft_putchar.o ft_memset.o ft_memcpy.o ft_memchr.o ft_memcmp.o \
 		ft_memdel.o ft_striter.o ft_isascii.o ft_putendl.o \
 		ft_putendl_fd.o ft_memalloc.o ft_strnew.o ft_strdel.o ft_strclr.o \
 		ft_strmap.o ft_putnbr.o ft_putnbr_fd.o ft_strmapi.o ft_strequ.o \
-		ft_strnequ.o ft_strsub.o ft_strjoin.o ft_strcmp.o
+		ft_strnequ.o ft_strsub.o ft_strjoin.o ft_strcmp.o ft_striteri.o
 
 INCLUDES=./
 
