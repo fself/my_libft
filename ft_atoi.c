@@ -6,37 +6,65 @@
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 16:46:16 by fself             #+#    #+#             */
-/*   Updated: 2019/09/20 16:53:30 by fself            ###   ########.fr       */
+/*   Updated: 2019/09/22 22:40:29 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+static int	ft_spacing(const char *str)
 {
-	int				i;
-	long long int	result;
-	long long int	neg;
+	int i;
+	int k;
 
 	i = 0;
-	neg = 1;
-	result = 0;
-	while (str[i] == 32 || str[i] == 10 || str[i] == 9 || str[i] == 12 ||
-			str[i] == 13 || str[i] == 11)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	k = 0;
+	while (str[i] == '+' || str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\v' || str[i] == '\r' || str[i] == '\f')
 	{
+		if (str[i++] == '+')
+			k++;
 		if (str[i] == '-')
-			neg = -1;
-		i++;
+		{
+			k++;
+			break ;
+		}
 	}
-	while (str[i])
+	if (k > 1)
+		return (-1);
+	return (i);
+}
+
+static int	ft_minus(const char *str)
+{
+	if (*str == '-')
+		return (1);
+	return (0);
+}
+
+int			ft_atoi(const char *str)
+{
+	int i;
+	int minus;
+	int number;
+
+	number = 0;
+	i = ft_spacing(str);
+	if (i < 0)
+		return (0);
+	minus = ft_minus(str + i);
+	if (minus == 1)
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (str[i] < 48 || 57 < str[i])
-			return (result * neg);
-		else
-			result = (result * 10) + (long long int)(str[i] - '0');
+		if (number > 469762049 && minus == 0)
+			return (-1);
+		else if (number > 469762049 && minus == 1)
+			return (0);
+		number = number * 10 + str[i] - '0';
 		i++;
 	}
-	return (result * neg);
+	if (minus == 1)
+		number = number * -1;
+	return (number);
 }
