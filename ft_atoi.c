@@ -14,26 +14,29 @@
 
 int		ft_atoi(const char *str)
 {
-	long	sign;
-	long	nbr;
-	int res;
+	int				i;
+	long long int	result;
+	long long int	neg;
 
-	sign = 1;
-	while (*str == ' ' || *str == '\f' || *str == '\n' || *str == '\r' ||
-			*str == '\t' || *str == '\v')
-		str++;
-	if (*str == '-' || *str == '+')
+	i = 0;
+	neg = 1;
+	result = 0;
+	while (str[i] == 32 || str[i] == 10 || str[i] == 9 || str[i] == 12 ||
+			str[i] == 13 || str[i] == 11)
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (*str == '-')
-			sign = -1;
-		str++;
+		if (str[i] == '-')
+			neg = -1;
+		i++;
 	}
-	nbr = 0;
-	while (ft_isdigit((int)*str))
+	while (str[i])
 	{
-		nbr = nbr * 10 + *str - '0';
-		str++;
+		if (str[i] < 48 || 57 < str[i])
+			return (result * neg);
+		else
+			result = (result * 10) + (long long int)(str[i] - '0');
+		i++;
 	}
-	res = (sign * nbr);
-	return (res);
+	return (result * neg);
 }

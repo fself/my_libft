@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 22:25:57 by fself             #+#    #+#             */
-/*   Updated: 2019/09/20 22:25:59 by fself            ###   ########.fr       */
+/*   Created: 2019/09/22 20:13:03 by fself             #+#    #+#             */
+/*   Updated: 2019/09/22 21:10:45 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	char		*ret;
-	int			temp_n;
-	size_t		size_ret;
-	char		sign;
+	t_list		*result;
+	t_list		*head;
+	t_list		*elem;
 
-	sign = (n < 0) ? -1 : 1;
-	size_ret = 2 + (n < 0);
-	temp_n = n;
-	while ((n = n / 10))
-		size_ret++;
-	n = temp_n;
-	if ((ret = (char *)malloc(sizeof(char) * size_ret--)) == NULL)
+	if (!lst || !f)
 		return (NULL);
-	ret[size_ret--] = '\0';
-	ret[size_ret--] = sign * (n % 10) + '0';
-	while ((n = n / 10))
-		ret[size_ret--] = sign * (n % 10) + '0';
-	if (sign < 0)
-		ret[size_ret] = '-';
-	return (ret);
+	elem = f(lst);
+	if (!(result = ft_lstnew(elem->content, elem->content_size)))
+		return (NULL);
+	lst = lst->next;
+	head = result;
+	while (lst)
+	{
+		elem = f(lst);
+		if (!(result->next = ft_lstnew(elem->content, elem->content_size)))
+			return (NULL);
+		result = result->next;
+		lst = lst->next;
+	}
+	return (head);
 }
