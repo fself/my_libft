@@ -6,7 +6,7 @@
 #    By: fself <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/18 15:16:13 by fself             #+#    #+#              #
-#    Updated: 2019/09/22 21:18:21 by fself            ###   ########.fr        #
+#    Updated: 2019/09/23 18:14:53 by fself            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRCS=ft_putchar.c ft_memset.c ft_memcpy.c ft_memchr.c ft_memcmp.c \
 	 ft_putnbr.c ft_putnbr_fd.c ft_strmapi.c ft_strequ.c ft_strnequ.c \
 	 ft_strsub.c ft_strjoin.c ft_strcmp.c ft_striteri.c ft_strnstr.c \
 	 ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
-	 ft_lstmap.c ft_strtrim.c ft_itoa.c ft_strsplit.c
+	 ft_lstmap.c ft_strtrim.c ft_itoa.c ft_strsplit.c ft_countwords.c \
+	 ft_iswhitespace.c ft_swap.c ft_sqrt.c ft_fact.c
 
 OBJECTS=ft_putchar.o ft_memset.o ft_memcpy.o ft_memchr.o ft_memcmp.o \
 		ft_bzero.o ft_strlen.o ft_strcpy.o ft_strncpy.o ft_strcat.o \
@@ -36,7 +37,8 @@ OBJECTS=ft_putchar.o ft_memset.o ft_memcpy.o ft_memchr.o ft_memcmp.o \
 		ft_strmap.o ft_putnbr.o ft_putnbr_fd.o ft_strmapi.o ft_strequ.o \
 		ft_strnequ.o ft_strsub.o ft_strjoin.o ft_strcmp.o ft_striteri.o \
 		ft_strnstr.o ft_lstnew.o ft_lstdelone.o ft_lstdel.o ft_lstadd.o \
-		ft_lstiter.o ft_lstmap.o ft_strtrim.o ft_itoa.o ft_strsplit.o
+		ft_lstiter.o ft_lstmap.o ft_strtrim.o ft_itoa.o ft_strsplit.o \
+		ft_countwords.o ft_iswhitespace.o ft_swap.o ft_sqrt.o ft_fact.o
 
 INCLUDES=./
 

@@ -6,65 +6,37 @@
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 16:46:16 by fself             #+#    #+#             */
-/*   Updated: 2019/09/22 22:40:29 by fself            ###   ########.fr       */
+/*   Updated: 2019/09/23 15:13:27 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_spacing(const char *str)
+int	ft_atoi(const char *str)
 {
-	int i;
-	int k;
+	int				f;
+	long long int	res;
 
-	i = 0;
-	k = 0;
-	while (str[i] == '+' || str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-		|| str[i] == '\v' || str[i] == '\r' || str[i] == '\f')
+	res = 0;
+	while (*str == ' ' || *str == '\t' || *str == '\n'
+			|| *str == '\v' || *str == '\f' || *str == '\r')
+		str++;
+	if (*str == '+' || *str == '-')
 	{
-		if (str[i++] == '+')
-			k++;
-		if (str[i] == '-')
-		{
-			k++;
-			break ;
-		}
-	}
-	if (k > 1)
-		return (-1);
-	return (i);
-}
-
-static int	ft_minus(const char *str)
-{
-	if (*str == '-')
-		return (1);
-	return (0);
-}
-
-int			ft_atoi(const char *str)
-{
-	int i;
-	int minus;
-	int number;
-
-	number = 0;
-	i = ft_spacing(str);
-	if (i < 0)
-		return (0);
-	minus = ft_minus(str + i);
-	if (minus == 1)
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		if (number > 469762049 && minus == 0)
-			return (-1);
-		else if (number > 469762049 && minus == 1)
+		if (*str == '-')
+			f = -1;
+		str++;
+		if (!(*str <= '9' && *str >= '0') && *str != '-')
 			return (0);
-		number = number * 10 + str[i] - '0';
-		i++;
 	}
-	if (minus == 1)
-		number = number * -1;
-	return (number);
+	while (*str <= '9' && *str >= '0')
+	{
+		res = res * 10 + *str - 48;
+		str++;
+		if (res > 2147483648 && f == 1)
+			return (-1);
+		else if (res > 2147483648 && f == -1)
+			return (0);
+	}
+	return (f == -1 ? -res : res);
 }

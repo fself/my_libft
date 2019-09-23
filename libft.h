@@ -6,7 +6,7 @@
 /*   By: fself <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 14:33:04 by fself             #+#    #+#             */
-/*   Updated: 2019/09/22 21:17:33 by fself            ###   ########.fr       */
+/*   Updated: 2019/09/23 18:15:41 by fself            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,9 @@ char			*ft_itoa(int n);
 char			**ft_strsplit(char const *str, char c);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putendl(char const *s);
+int				ft_countwords(const char *str, char delim);
+int				ft_iswhitespace(char c);
+void			ft_swap(int *a, int *b);
+int				ft_sqrt(int nbr);
+int				ft_fact(int x);
 #endif
